@@ -1,0 +1,12 @@
+.main-header {
+  min-height: 250px;
+  background-image: url('../images/wave.jpg');
+  background-size: cover;
+  background-position: left center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  @include media-breakpoint-up(lg) {
+    min-height: 400px;
+  }
+}

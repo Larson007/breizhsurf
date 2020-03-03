@@ -48,7 +48,7 @@ get_header();
                 <?php else : ?>
                 <?php $img = 'planche-2.svg' ?>
                 <?php endif; ?>
-                <img src="<?= get_template_directory_uri() ?>/images/<?= $img ?>" alt="">
+                <img src="<?= get_template_directory_uri() ?>/dist/images/<?= $img ?>" alt="">
               <?php endforeach; ?>
             </div>
           </div>

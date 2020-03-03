@@ -20,7 +20,7 @@
 
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'dev2_breizhsurf0' );
+define( 'DB_NAME', 'dc_breizhsurf' );
 
 /** MySQL database username */
 define( 'DB_USER', 'root' );

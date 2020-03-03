@@ -1,0 +1,41 @@
+.home {
+  .main-header {
+    min-height: calc(100vh - 90px);
+    background-image: url('../images/home_bg.jpg');
+    background-position: top center;
+  }
+  .entry-header {
+    text-align: center;
+  }
+  .type-page.hentry {
+    text-align: center;
+  }
+  .type-page .entry-content h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.front-spots_grid {
+  position: relative;
+  z-index: 2;
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    >* {
+      flex-basis: 50%;
+    }
+    > :nth-of-type(n+5) {
+      flex-basis: 100%;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    >* {
+      flex-basis: 33.33%;
+    }
+    > :nth-of-type(n+4) {
+      flex-basis: 50%;
+    }
+  }
+}

@@ -18,42 +18,43 @@
 
 <body <?php body_class(); ?>>
 
-<div class="page-wrapper">
+  <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top main-navbar">
 
-<nav class="navbar navbar-expand-md navbar-light bg-white sticky-top main-navbar">
+      <div class="navbar-brand">
+        <a href="<?php bloginfo('url') ?>/">
+          <img class="navbar-brand-logo" src="<?= get_stylesheet_directory_uri() ?>/dist/images/logo.svg" alt="<?= esc_attr(get_bloginfo('name')) ?>">
+        </a>
+      </div>
 
-		<div class="navbar-brand">
-			<a href="<?php bloginfo('url') ?>/">
-				<img class="navbar-brand-logo" src="<?= get_stylesheet_directory_uri() ?>/images/logo.svg" alt="<?= esc_attr(get_bloginfo('name')) ?>">
-			</a>
-		</div>
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-		</button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 		
-		<div id="primaryNav" class="collapse navbar-collapse">
+		  <div id="navbarNav" class="collapse navbar-collapse">
 	
-			<?php 
-			wp_nav_menu( array(
-				'theme_location'  => 'primary',
-				'depth'	          => 1,
-				'container'       => 'div',
-				'container_class' => 'main-menu-wrapper mx-auto',
-				'menu_class'      => 'navbar-nav main-menu',
-				'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-				'walker'          => new WP_Bootstrap_Navwalker(),
-			) );
-			?>
+        <?php 
+        wp_nav_menu( array(
+          'theme_location'  => 'primary',
+          'depth'	          => 1,
+          'container'       => 'div',
+          'container_class' => 'main-menu-wrapper mx-auto',
+          'menu_class'      => 'navbar-nav main-menu',
+          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'          => new WP_Bootstrap_Navwalker(),
+        ) );
+        ?>
 			
-			<?php 
-			wp_nav_menu( array(
-				'theme_location'  => 'social',
-				'depth'	          => 1,
-			) );
-			?>
+        <?php 
+        wp_nav_menu( array(
+          'theme_location'  => 'social',
+          'depth'	          => 1,
+          'menu_class'      => 'navbar-nav social-menu',
+          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'          => new WP_Bootstrap_Navwalker(),
+        ) );
+        ?>
 
-		</div>
+      </div><!-- #navbarNav -->
 
-	</nav>
+  </nav>
 

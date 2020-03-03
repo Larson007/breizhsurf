@@ -39,7 +39,7 @@ get_header();
         <?php if ( has_post_thumbnail() ) : ?>
         <div class="row">
           <div class="col-lg-5">
-            <figure class="card_figure mb-3 mb-lg-0">
+            <figure class="card-figure mb-3 mb-lg-0">
               <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb-555', array( 'class' => 'img-fluid article-lastposts-img' )) ?></a>
             </figure>            
           </div>

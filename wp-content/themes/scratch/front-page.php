@@ -11,7 +11,7 @@ $lastspots = get_posts( array(
   'orderby' => 'rand'
 ) );
 
-$lastposts = get_posts( array(
+$focuspost = get_posts( array(
 	'posts_per_page' => 1,
   'post__in' => get_option( 'sticky_posts' ),
   'ignore_sticky_posts' => 1
@@ -28,7 +28,7 @@ get_header();
     <header class="entry-header main-header py-5">
       <div class="container">
         <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-        <a href="<?= esc_url( home_url( '/' ) ) ?>/spots/" class="btn btn-outline-light mt-4"><?php _e('Tous les spots', 'scratch'); ?></a>
+        <a href="<?= get_post_type_archive_link( 'spot' ); ?>" class="btn btn-outline-light mt-4"><?php _e('Tous les spots', 'scratch'); ?></a>
       </div>
     </header>
     <div class="entry-content container py-5 w-75">
@@ -59,19 +59,19 @@ get_header();
     </div>
   <?php endif;?>
   <div class="text-center">
-    <a href="<?= esc_url( home_url( '/' ) ) ?>/spots/" class="btn btn-outline-primary my-5"><?php _e('Tous les spots', 'scratch'); ?></a>
+    <a href="<?= get_post_type_archive_link( 'spot' ); ?>" class="btn btn-outline-primary my-5"><?php _e('Tous les spots', 'scratch'); ?></a>
   </div>
 </section>
 
-  <?php if ( $lastposts ) : ?>
+  <?php if ( $focuspost ) : ?>
 
-    <section class="front-sticky-post container my-5">
-      <?php foreach ( $lastposts as $post ) :
+    <section class="front-sticky-post container my-5 pb-5">
+      <?php foreach ( $focuspost as $post ) :
           setup_postdata( $post );	?>
 
         <article <?php post_class('sticky-post_article row'); ?>>
-          <figure class="card_figure mb-0 col-sm-10 col-md-5 offset-sm-1">
-          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb-555', array( 'class' => 'img-fluid card-post_img' )) ?></a>
+          <figure class="card-figure mb-0 col-sm-10 col-md-5 offset-sm-1">
+          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb-555', array( 'class' => 'img-fluid' )) ?></a>
           </figure>
           <div class="sticky-post_content py-4 bg-white col-sm-10 offset-sm-1 col-md-5 offset-md-0 ">
             <h2><?php _e('À la une', 'scratch'); ?></h2>

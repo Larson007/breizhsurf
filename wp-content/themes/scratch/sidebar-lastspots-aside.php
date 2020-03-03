@@ -28,7 +28,7 @@ $lastspots = get_posts( array(
     <?php endif;?>
 
     <div class="text-center">
-        <a href="<?= esc_url( home_url( '/' ) ) ?>/spots/" class="btn btn-outline-primary mt-4"><?php _e('Tous les spots', 'scratch'); ?></a>
+        <a href="<?= get_post_type_archive_link( 'spot' ); ?>" class="btn btn-outline-primary mt-4"><?php _e('Tous les spots', 'scratch'); ?></a>
     </div>
 
 </section>

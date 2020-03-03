@@ -1,0 +1,49 @@
+
+.owl-stage {
+  display: flex;
+}
+
+.owl-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-grow: 1;
+
+      p {
+        font-size: 0.875rem;
+      }
+
+      .more-link {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.owl-carousel .owl-nav {
+
+  button.owl-prev,
+  button.owl-next {
+    color: $primary;
+    position: absolute;
+    top: 10%;
+  }
+
+  button.owl-prev {
+    left: -0.5rem;
+  }
+
+  button.owl-next {
+    right: -0.5rem;
+  }
+}
